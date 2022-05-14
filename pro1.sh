@@ -1,6 +1,6 @@
 #!/bin/bash
 
-escpae_char=$(printf "\u1b")
+escape_char=$(printf "\u1b")
 
 InputForJoin(){
 
@@ -79,21 +79,7 @@ echo '  '
 echo '  '
 }
 
-#SignIn_InputForID(){
 
-#read -rsn1 mode
-#if [[ $mode == $escape_char ]]; then
-#	read -rsn2 mode
-#fi
-#case $mode in
-#	'[A' ) ;;
-#	'[B' ) function_SignIn ;;
-#	'[C' ) function_Exit ;;
-#	'[D' ) function_Exit ;;
-#esac
-
-
-#}
 SignIn_ID(){
 SignInLogo
 
@@ -103,7 +89,6 @@ echo -e "         \033[44m         PW         \033[0m     "
 echo ' '
 echo ' '
 echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
-
 
 
 }
@@ -160,12 +145,15 @@ echo ' '
 echo -e "            \033[44m   EXIT   \033[0m            \033[44m  SIGN OUT \033[0m"
 
 read -rsn1 mode
+
+
 if [[ $mode == $escape_char ]]; then
-function_Join
-while [ 1 ]
-do
-	InputForJoin
-done
+	function_Join
+
+	while [ 1 ]
+		do
+			InputForJoin
+		done
 fi 
 
 }
