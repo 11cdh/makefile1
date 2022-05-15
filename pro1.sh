@@ -2,6 +2,10 @@
 
 escape_char=$(printf "\u1b")
 
+SignIn_IDVal="ID"
+SignIn_PWVal="PW"   #default value
+
+
 InputForJoin(){
 
 read -rsn1 mode
@@ -68,6 +72,8 @@ esac
 
 }
 
+#functions for operate SignIn
+
 SignInLogo(){
 clear
 echo '               ____ ___ ____ _   _   ___ _   _         '
@@ -78,44 +84,185 @@ echo '              |____/___\____|_| \_| |___|_| \_|        '
 echo '  '
 echo '  '
 }
+SignIn_InputForID(){
 
-
-SignIn_ID(){
-SignInLogo
-
-echo -e "         \033[41m         ID         \033[0m    \033[44m  Duplicate check  \033[0m"
-echo '  '
-echo -e "         \033[44m         PW         \033[0m     "
-echo ' '
-echo ' '
-echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
-
-
+read -rsn1 mode
+if [[ $mode == $escape_char ]]; then
+	read -rsn2 mode
+elif [[ $mode = "" ]]; then
+	InputForID
+fi
+case $mode in
+	'[A' ) SignIn_SignIn ;;
+	'[B' ) SignIn_PW ;;
+	'[C' ) SignIn_Dup ;;
+	'[D' ) SignIn_Dup ;;
+esac
 }
 
+InputForID(){
+read SignIn_IDVal
+SignIn_ID
+}
+
+
+SignIn_InputForPW(){
+read -rsn1 mode
+if [[ $mode == $escape_char ]]; then
+	read -rsn2 mode
+elif [[ $mode = "" ]]; then
+	InputForPW
+fi
+case $mode in
+	'[A' ) SignIn_ID ;;
+	'[B' ) SignIn_SignIn ;;
+esac
+}
+
+InputForPW(){
+read SignIn_PWVal
+SignIn_PW
+}
+
+SignIn_InputForDup(){
+read -rsn1 mode
+if [[ $mode == $escape_char ]]; then
+	read -rsn2 mode
+elif [[ $mode = "" ]]; then
+	echo hi
+fi
+case $mode in
+	'[A' ) SignIn_Exit ;;
+	'[B' ) SignIn_PW ;;
+	'[C' ) SignIn_ID ;;
+	'[D' ) SignIn_ID ;;
+esac
+}
+
+SignIn_InputForSignIn(){
+read -rsn1 mode
+if [[ $mode == $escape_char ]]; then
+	read -rsn2 mode
+elif [[ $mode = "" ]]; then
+	SaveUserInfo
+fi
+case $mode in
+	'[A' ) SignIn_PW ;;
+	'[B' ) SignIn_ID ;;
+	'[C' ) SignIn_Exit ;;
+	'[D' ) SignIn_Exit ;;
+esac
+}
+
+
+SignIn_InputForExit(){
+read -rsn1 mode
+if [[ $mode == $escape_char ]]; then
+	read -rsn2 mode
+elif [[ $mode = "" ]]; then
+	exit
+fi
+case $mode in
+	'[A' ) SignIn_PW ;;
+	'[B' ) SignIn_Dup ;;
+	'[C' ) SignIn_SignIn ;;
+	'[D' ) SignIn_SignIn ;;
+esac
+
+}
 
 SignIn(){
 SignInLogo
 
-echo -e "         \033[44m         ID         \033[0m    \033[44m  Duplicate check  \033[0m"
+echo -e "         \033[44m         $SignIn_IDVal         \033[0m    \033[44m  Duplicate check  \033[0m"
 echo '  '
-echo -e "         \033[44m         PW         \033[0m     "
+echo -e "         \033[44m         $SignIn_PWVal         \033[0m     "
 echo ' '
 echo ' '
 echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
 
+read -rsn1 mode
+
+if [[ $mode == $escape_char ]]; then
+SignIn_ID
+	while [ 1 ]
+		do
+			SignIn_InputForID
+		done
+
+fi 
 }
 
 SignIn_ID(){
 SignInLogo
 
-echo -e "         \033[44m         ID         \033[0m    \033[44m  Duplicate check  \033[0m"
-echo ' '
-echo -e "         \033[44m         PW         \033[0m     "
+echo -e "         \033[41m         $SignIn_IDVal         \033[0m    \033[44m  Duplicate check  \033[0m"
+echo '  '
+echo -e "         \033[44m         $SignIn_PWVal         \033[0m     "
 echo ' '
 echo ' '
 echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
+
+	SignIn_InputForID
+
 }
+
+
+SignIn_PW(){
+SignInLogo
+
+echo -e "         \033[44m         $SignIn_IDVal         \033[0m    \033[44m  Duplicate check  \033[0m"
+echo '  '
+echo -e "         \033[41m         $SignIn_PWVal         \033[0m     "
+echo ' '
+echo ' '
+echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
+
+	SignIn_InputForPW
+}
+
+SignIn_Dup(){
+SignInLogo
+
+echo -e "         \033[44m         $SignIn_IDVal         \033[0m    \033[41m  Duplicate check  \033[0m"
+echo '  '
+echo -e "         \033[44m         $SignIn_PWVal         \033[0m     "
+echo ' '
+echo ' '
+echo -e "                 \033[44m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
+
+	SignIn_InputForDup
+}
+
+SignIn_SignIn(){
+SignInLogo
+
+echo -e "         \033[44m         $SignIn_IDVal         \033[0m    \033[44m  Duplicate check  \033[0m"
+echo '  '
+echo -e "         \033[44m         $SignIn_PWVal         \033[0m     "
+echo ' '
+echo ' '
+echo -e "                 \033[41m  SIGN IN  \033[0m     \033[44m   EXIT   \033[0m"
+
+
+	SignIn_InputForSignIn
+}
+
+SignIn_Exit(){
+SignInLogo
+
+echo -e "         \033[44m         $SignIn_IDVal         \033[0m    \033[44m  Duplicate check  \033[0m"
+echo '  '
+echo -e "         \033[44m         $SignIn_PWVal         \033[0m     "
+echo ' '
+echo ' '
+echo -e "                 \033[44m  SIGN IN  \033[0m     \033[41m   EXIT   \033[0m"
+
+	SignIn_InputForExit
+}
+
+
+# From here functions are operate for Default menu
 
 function_Logo(){
 
@@ -206,9 +353,6 @@ echo -e "            \033[44m   EXIT   \033[0m            \033[41m  SIGN OUT \03
 InputForSignOut
 }
 
+#main function
 
-#while [ 1 ]; do
 function_DefaultScreen
-#function_Join
-
-
