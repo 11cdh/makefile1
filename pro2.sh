@@ -97,11 +97,11 @@ clear
 
 Make_Default
 
-echo '            _  _____  _     __  ____  __    '
-echo '           / \|_   _|/ \    \ \/ /\ \/ /    '
-echo '          / _ \ | | / _ \    \  /  \  /     '    
-echo '         / ___ \| |/ ___ \   /  \  /  \     '
-echo '        /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
+echo '             _  _____  _     __  ____  __    '
+echo '            / \|_   _|/ \    \ \/ /\ \/ /    '
+echo '           / _ \ | | / _ \    \  /  \  /     '    
+echo '          / ___ \| |/ ___ \   /  \  /  \     '
+echo '         /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
 echo -e "        \u250C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u2510"
 echo -e "        \u2502$a1\u2502$a2\u2502$a3\u2502$a4\u2502$a5\u2502$a6\u2502$a7\u2502$a8\u2502"
 echo -e "        \u251C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u2524"
@@ -140,11 +140,11 @@ clear
 
 Make_Default2
 
-echo '            _  _____  _     __  ____  __    '
-echo '           / \|_   _|/ \    \ \/ /\ \/ /    '
-echo '          / _ \ | | / _ \    \  /  \  /     '    
-echo '         / ___ \| |/ ___ \   /  \  /  \     '
-echo '        /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
+echo '             _  _____  _     __  ____  __    '
+echo '            / \|_   _|/ \    \ \/ /\ \/ /    '
+echo '           / _ \ | | / _ \    \  /  \  /     '    
+echo '          / ___ \| |/ ___ \   /  \  /  \     '
+echo '         /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
 echo -e "        \u250C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u2510"
 echo -e "        \u2502$a1\u2502$a2\u2502$a3\u2502$a4\u2502$a5\u2502$a6\u2502$a7\u2502$a8\u2502"
 echo -e "        \u251C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u2524"
@@ -181,11 +181,11 @@ read -rsn1 mode
 Map1_Real(){
 clear
 
-echo '            _  _____  _     __  ____  __    '
-echo '           / \|_   _|/ \    \ \/ /\ \/ /    '
-echo '          / _ \ | | / _ \    \  /  \  /     '    
-echo '         / ___ \| |/ ___ \   /  \  /  \     '
-echo '        /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
+echo '             _  _____  _     __  ____  __    '
+echo '            / \|_   _|/ \    \ \/ /\ \/ /    '
+echo '           / _ \ | | / _ \    \  /  \  /     '    
+echo '          / ___ \| |/ ___ \   /  \  /  \     '
+echo '         /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
 echo -e "        \u250C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u2510"
 echo -e "        \u2502$a1\u2502$a2\u2502$a3\u2502$a4\u2502$a5\u2502$a6\u2502$a7\u2502$a8\u2502"
 echo -e "        \u251C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u2524"
@@ -216,11 +216,11 @@ echo  "   1P : $P1_Score                             2P : 0   "
 Map2_Real(){
 clear
 
-echo '            _  _____  _     __  ____  __    '
-echo '           / \|_   _|/ \    \ \/ /\ \/ /    '
-echo '          / _ \ | | / _ \    \  /  \  /     '    
-echo '         / ___ \| |/ ___ \   /  \  /  \     '
-echo '        /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
+echo '             _  _____  _     __  ____  __    '
+echo '            / \|_   _|/ \    \ \/ /\ \/ /    '
+echo '           / _ \ | | / _ \    \  /  \  /     '    
+echo '          / ___ \| |/ ___ \   /  \  /  \     '
+echo '         /_/   \_\_/_/   \_\ /_/\_\/_/\_\    ' 
 echo -e "        \u250C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u252C$w\u2510"
 echo -e "        \u2502$a1\u2502$a2\u2502$a3\u2502$a4\u2502$a5\u2502$a6\u2502$a7\u2502$a8\u2502"
 echo -e "        \u251C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u253C$w\u2524"
@@ -2142,7 +2142,7 @@ MapSelect(){
 
 Logo_MapSelect
 
-echo -e "                \033[44m   MAP1   \033[0m                            \033[44m   MAP2   \033[0m"
+echo -e "                \033[44m   MAP1   \033[0m                             \033[44m   MAP2   \033[0m"
  
 
 read -rsn1 mode
@@ -2162,7 +2162,7 @@ MapSelect_Map1(){
 
 Logo_MapSelect
 
-echo -e "                \033[41m   MAP1   \033[0m                            \033[44m   MAP2   \033[0m"
+echo -e "                \033[41m   MAP1   \033[0m                             \033[44m   MAP2   \033[0m"
 
 MapSelect_InputForMap1
 
@@ -2172,7 +2172,7 @@ MapSelect_Map2(){
 
 Logo_MapSelect
 
-echo -e "                \033[44m   MAP1   \033[0m                            \033[41m   MAP2   \033[0m"
+echo -e "                \033[44m   MAP1   \033[0m                             \033[41m   MAP2   \033[0m"
 
 MapSelect_InputForMap2
 
