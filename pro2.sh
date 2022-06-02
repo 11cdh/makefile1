@@ -2124,7 +2124,8 @@ MapSelect(){
 
 Logo_MapSelect
 
-echo -e "                \033[44m  MAP1  \033[0m         \033[44m   MAP2   \033[0m"
+echo -e "                \033[44m   MAP1   \033[0m             \033[44m   MAP2   \033[0m"
+
 
 read -rsn1 mode
 
@@ -2139,27 +2140,27 @@ fi
 
 }
 
-MapSelcet_Map1(){
+MapSelect_Map1(){
 
 Logo_MapSelect
 
-echo -e "                \033[41m  MAP1  \033[0m         \033[44m   MAP2   \033[0m"
+echo -e "                \033[41m   MAP1   \033[0m             \033[44m   MAP2   \033[0m"
 
 MapSelect_InputForMap1
 
 }
 
-MapSelcet_Map2(){
+MapSelect_Map2(){
 
 Logo_MapSelect
 
-echo -e "                \033[44m  MAP1  \033[0m         \033[41m   MAP2   \033[0m"
+echo -e "                \033[44m   MAP1   \033[0m             \033[41m   MAP2   \033[0m"
 
 MapSelect_InputForMap2
 
 }
 
-MapSelcet_InputForMap1(){
+MapSelect_InputForMap1(){
 
 read -rsn1 mode
 
